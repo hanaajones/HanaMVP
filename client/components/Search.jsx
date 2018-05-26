@@ -31,6 +31,9 @@ class Search extends React.Component {
     return (
     <div>
       <h4>Conquer your countries</h4>
+      {/*<div>
+      <button class="settle-btn">Do you want to settle?</button>
+      </div>*/}
       <div class="container-1">
         <span class="icon"><i class="fa fa-search"></i></span>
         <div>

@@ -21,9 +21,7 @@ const Country = (props) => (
           
     </div>
     </div>
-    <div>
-    <button className="settle-btn">Do you want to settle?</button>
-    </div>
+    <button className="btnSettle" onClick={props.settle}>Do you want to settle?</button>
   </div>
 )
 
