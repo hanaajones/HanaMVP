@@ -10,7 +10,9 @@ class App extends React.Component {
         this.state = {
             country: {},
             resources: [],
-            numbers: []
+            numbers: [],
+            population: 0,
+            space: true
         }
 
     }
@@ -20,28 +22,33 @@ class App extends React.Component {
     }
 
     fetch(term) {
-        axios.get('/katan', {
-            params: {
-                name: term
-            }
-        }).then((response) => {
-            console.log("This is response in get:", response.data);
-            if (response.status === 404) {
-                console.log("error")
-            } else {
+        if (term === "space") {
+            console.log("this was space")
+            this.setState({space: !this.state.space})
+        } else {
+            axios.get('/katan', {
+                params: {
+                    name: term
+                }
+            }).then((response) => {
+                console.log("This is response in get:", response.data);
+                if (response.status === 404) {
+                    console.log("error")
+                } else {
 
-                this.setState({
-                    country: response.data,
-                    resources: response.data.resources,
-                    numbers: response.data.numbers
-                }, () => { console.log("this.setstate:", this.state.resources) })
+                    this.setState({
+                        country: response.data,
+                        resources: response.data.resources,
+                        numbers: response.data.numbers,
+                        population: response.data.population
+                    }, () => { console.log("this.setstate:", this.state.resources) })
 
-            }
-        })
-            .catch((error) => {
-                console.log("There was an error in post:", error);
-            });
-
+                }
+            })
+                .catch((error) => {
+                    console.log("There was an error in post:", error);
+                });
+        }
     }
 
 
@@ -60,11 +67,14 @@ class App extends React.Component {
 
 
     render() {
+        let indexClass = this.state.space ? "regular" : "animated infinite shake";
         return (
-            <div>
-                <h1>KAH - TAN</h1>
+            <div className={indexClass}>
+                <h1 >Kah-tan</h1>
                 <Search onSearch={this.fetch.bind(this)} onSettle={this.settle.bind(this)} />
-                <Country country={this.state.country} resources={this.state.resources} numbers={this.state.numbers}/>
+                <div>
+                    <Country country={this.state.country} resources={this.state.resources} numbers={this.state.numbers} population={this.state.population} />
+                </div>
             </div>)
     }
 }

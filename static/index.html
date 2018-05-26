@@ -2,28 +2,39 @@
 <html lang="en">
 
 <head>
-    <!--<link href="../dist/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../dist/jquery.vmap.js"></script>
-    <script type="text/javascript" src="../dist/maps/jquery.vmap.world.js" charset="utf-8"></script>-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rakkas" rel="stylesheet">
+     <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="../../dist/jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js" charset="utf-8"></script>
+    <!--<script src="jquery-jvectormap-2.0.1.min.js"></script>
+    <script src="jquery-jvectormap-world-mill.js"></script>-->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello World</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#vmap').vectorMap({ map: 'world_en' });
+        });
+    </script>
 
-    <!--<script type="text/javascript">
-    jQuery(document).ready(function() {
-      jQuery('#vmap').vectorMap({ map: 'world_en' });
-    });
-    </script>-->
+
 </head>
 
-<body>
+<body class='animated bounceInRight' >
     <div id='app'></div>
     <script src="bundle.js"></script>
-    <!--<div id="vmap" style="width: 600px; height: 400px;"></div>-->
-    <div id="pentagon" ></div>
+    <div id="vmap" style="width: 600px; height: 400px;"></div>
+    <!--<div id="pentagon" ></div>-->
+
 </body>
 
 </html>

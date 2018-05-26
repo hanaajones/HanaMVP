@@ -26,6 +26,7 @@
     "build": "webpack -w"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
     "axios": "^0.18.0",
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
@@ -36,6 +37,7 @@
     "morgan": "^1.4.1",
     "mysql": "^2.4.2",
     "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
     "request": "^2.69.0",
     "sequelize": "^3.21.0",
